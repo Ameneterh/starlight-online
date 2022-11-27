@@ -10,7 +10,7 @@ html {
 }
 
 body {
-    background: url(/images/bground.jpg);
+    background: url(images/bground.jpg);
     background-size: stretch;
 }
 
@@ -38,12 +38,88 @@ body {
     color: red;
 }
 
+/* Start of dropdown CSS */
+
+/* nav {
+    background-color: #1289dd;
+} */
+
+#no-color {
+    background-color: white;
+}
+
+nav ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: relative;
+    display: inline-block;
+}
+
+ul {
+    display: inline-block;
+    background-color: #1289dd;
+}
+
+
+nav a{
+    display: block;
+    padding: 0 10px;
+    color: #fff;
+    line-height: 40px;
+    font-size: 16px;
+    text-decoration: none;
+}
+/* Hide Dropdown by Default*/
+nav ul ul {
+    display: none;
+    position: absolute;
+    top: 40px;
+}
+/* hover */
+nav a:hover{
+    background-color: #000000;
+}
+/* Display Dropdown on Hover */
+nav ul li:hover > ul {
+    display: inherit;
+}
+/* Fisrt Tier Dropdown */
+nav ul ul li{
+    width: 200px;
+    float: none;
+    display: list-item;
+    position: relative;
+
+}
+
+/* ============ Second, Third and More Tiers ===========*/
+nav ul ul ul li {
+    position: relative;
+    top: -60px;
+    left: 170px;
+}
+
+/* Change this in order to change the Dropdown symbol */
+li > a::after { content: ' +';}
+li > a:only-child::after {
+    content: '';
+}
+
+/* End of dropdown CSS */
+
 #pullDown, #siteLogo, #siteName, #navSocial {
     margin-right: 10px;
 }
 
-.drop-btn {
-    background: none;
+#drop-btn {
+    height: 30px;
+    /* border: none; */
+}
+
+#drop-img {
+    height: 30px;
+    background-image: url("images/droplink.png") no-repeat;
     border: none;
 }
 
@@ -120,7 +196,7 @@ footer {
     height: 30px;
     width: 15%;
     padding: 0 10px;
-    background: url(/images/search-icon.png) no-repeat;
+    background: url(images/search-icon.png) no-repeat;
     background-position: center;
     background-size: 20px;
     border-radius: 0 20px 20px 0;
@@ -161,11 +237,16 @@ footer {
 }
 
 @media screen and (max-width: 700px) {
-    html {
+    /* html {
         background-color: red;
+    } */
+
+    body {
+        background: none;
     }
 
     main {
+        background-color: rgba(190, 186, 186);
         box-sizing: border-box;
         flex-direction: column;
         margin-left: 0;
@@ -178,6 +259,7 @@ footer {
     }
 
     #content, #sideBar {
+        border: none;
         width: 100%;
         box-sizing: border-box;
     }
